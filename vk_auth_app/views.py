@@ -16,5 +16,5 @@ def index(request):
     user_token = user.access_token
     session = VkApi(token=user_token)
     api = session.get_api()
-    friends = api.friends.get(count=6, fields=['first_name, last_name, photo_200'])
+    friends = api.friends.get(count=5, fields=['first_name, last_name, photo_200'])
     return render(request, 'index.html', {'friends': friends['items']})
