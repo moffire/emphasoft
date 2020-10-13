@@ -24,10 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '5-+^z*5vvtgc316bwmr!#m%(ixn^30rszypkghi*gn*7fmfsk-')
+SECRET_KEY = '5-+^z*5vvtgc316bwmr!#m%(ixn^30rszypkghi*gn*7fmfsk-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -140,8 +140,8 @@ AUTHENTICATION_BACKENDS = (
 )
 
 # vk OAuth setting
-SOCIAL_AUTH_VK_OAUTH2_KEY = os.getenv('SOCIAL_AUTH_VK_OAUTH2_KEY')
-SOCIAL_AUTH_VK_OAUTH2_SECRET = os.getenv('SOCIAL_AUTH_VK_OAUTH2_SECRET')
+SOCIAL_AUTH_VK_OAUTH2_KEY = '7627412'
+SOCIAL_AUTH_VK_OAUTH2_SECRET = 'u8kRUjJFeyZL2wZ5g7Yh'
 
 LOGIN_URL = '/login/vk-oauth2/'
 LOGIN_REDIRECT_URL = ''
