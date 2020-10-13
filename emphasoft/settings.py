@@ -29,7 +29,7 @@ SECRET_KEY = '5-+^z*5vvtgc316bwmr!#m%(ixn^30rszypkghi*gn*7fmfsk-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://evening-wildwood-24151.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['evening-wildwood-24151.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
