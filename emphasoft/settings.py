@@ -27,9 +27,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '5-+^z*5vvtgc316bwmr!#m%(ixn^30rszypkghi*gn*7fmfsk-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['evening-wildwood-24151.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['emphasofttestapp.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -135,16 +135,18 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Authentication backends
 AUTHENTICATION_BACKENDS = (
-    'social_core.backends.vk.VKOAuth2',   'django.contrib.auth.backends.ModelBackend',
+    'social_core.backends.vk.VKOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
 )
 
 # vk OAuth setting
-SOCIAL_AUTH_VK_OAUTH2_KEY = '7627412'
-SOCIAL_AUTH_VK_OAUTH2_SECRET = 'u8kRUjJFeyZL2wZ5g7Yh'
+SOCIAL_AUTH_VK_OAUTH2_KEY = '7629735'
+SOCIAL_AUTH_VK_OAUTH2_SECRET = 'baV4h1FBq3Hyeeq2CjGV'
 
-LOGIN_URL = '/login/vk-oauth2/'
-LOGIN_REDIRECT_URL = ''
-LOGOUT_REDIRECT_URL = ''
+
+LOGIN_URL = 'auth/login/vk-oauth2/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 # Heroku
 import dj_database_url
