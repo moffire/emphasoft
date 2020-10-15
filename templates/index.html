@@ -5,18 +5,27 @@
     <title>Main Page</title>
 </head>
 <body>
-<h3>{{ user.first_name }} {{ user.last_name }}</h3>
 
-{% for friend in friends %}
-    <p>
-        <img src="{{ friend.photo_200 }}" alt=""><br>
-        {{ friend.first_name }}
-        {{ friend.last_name }}
+{% if user.is_authenticated %}
+    <h3>Привет, {{ user.first_name }} {{ user.last_name }}
+        <a href="{% url "logout" %}">
+            <button>Выход</button>
+        </a>
+    </h3>
+    {% for friend in friends %}
+        <p>
+            <img src="{{ friend.photo_200 }}" alt=""><br>
+            {{ friend.first_name }}
+            {{ friend.last_name }}
+        </p>
         <hr>
-    </p>
-{% empty %}
-    <p>To see your friend list please authorise using VK</p>
-{% endfor %}
-
+    {% empty %}
+        <p>Ваш список друзей пуст</p>
+    {% endfor %}
+{% else %}
+    <a href="{% url "social:begin" "vk-oauth2" %}">
+        <button>Авторизоваться</button>
+    </a>
+{% endif %}
 </body>
 </html>
